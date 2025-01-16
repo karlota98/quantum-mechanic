@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Link Actualizado</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente Pixelada */
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000000; /* Fondo negro estilo retro */
+      color: #FFFFFF; /* Texto blanco */
+      font-family: 'Press Start 2P', sans-serif; /* Fuente pixelada */
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .button {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-size: 1rem;
+      background-color: #FF0000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.5);
+      border: 2px solid #FFFFFF;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 6px 10px rgba(255, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <h1>YOUTUBE LINK ACTUALIZADO</h1>
+  <a class="button" href="https://drive.google.com/drive/folders/1Dha3-HNPJyUoSXmuM8036P9ypSJ0ICeq?usp=drive_link" target="_blank">IR AL LINK</a>
+  <script>
+    // Función para lanzar confeti pixelado
+    function launchPixelConfetti() {
+      const colors = ['#FF0000', '#FFFF00', '#FFFFFF', '#00FF00', '#0000FF'];
+      for (let i = 0; i < 150; i++) {
+        const pixel = document.createElement('div');
+        pixel.style.position = 'absolute';
+        pixel.style.width = '10px';
+        pixel.style.height = '10px';
+        pixel.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        pixel.style.top = `${Math.random() * 100}vh`;
+        pixel.style.left = `${Math.random() * 100}vw`;
+        pixel.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+        document.body.appendChild(pixel);
+        setTimeout(() => pixel.remove(), 5000); // Elimina los píxeles después de 5 segundos
+      }
+    }
+    // Añadir la animación
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(-10vh); }
+        100% { transform: translateY(110vh); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Lanzar confeti pixelado automáticamente
+    launchPixelConfetti();
+    setInterval(launchPixelConfetti, 3000); // Repite cada 3 segundos
+  </script>
+</body>
+</html>
